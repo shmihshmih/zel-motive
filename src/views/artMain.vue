@@ -7,7 +7,7 @@
                     v-for="artType of artTypes"
                     :key="artType.path"
                 >
-                    <router-link :to="{path: '/art/' + artType.path, params: { type: artType.path}}">{{ artType.caption }}  {{ artType.path }}</router-link>
+                    <router-link :to="{path: '/art/' + artType.path, params: { type: artType.path}}">{{ artType.caption }}</router-link>
 
                 </td>
             </tr>

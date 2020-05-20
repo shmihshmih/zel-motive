@@ -122,7 +122,7 @@
         margin-right: auto;
     }
     .main-menu-capsule {
-        max-width: 400px;
+        max-width: 300px;
     }
     .main-menu-capsule img {
         width: 200px;

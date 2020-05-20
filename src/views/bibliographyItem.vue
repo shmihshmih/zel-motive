@@ -1,28 +1,21 @@
 <template>
-    <li>
-        <span 
-            v-bind:class="{activeLink: !!bibliographyItem.id }"
-            v-on:click="$emit('hellloFromMidParent', bibliographyItem.id)"
-            >
-            <strong>
-                {{ bibliographyItem.id}}
-            </strong>
-            <span>
-                {{ bibliographyItem.author }} / {{ bibliographyItem.caption }}
-            </span>
-            <span>
-                Список библиографии
-            </span>
-        </span>
-    </li>
+    <div>
+        <div>
+            <router-link to="/bibliography">Библиография</router-link>
+        </div>
+        <div>
+            {{bibliographyItem.id}}
+        </div>
+    </div>
 </template>
 
 <script>
     export default {
-        props: {
-            bibliographyItem: {
-                type: Object, 
-                required: true
+        data() {
+            return {
+                bibliographyItem: {
+                    id: this.$route.params.id
+                }
             }
         }
     }

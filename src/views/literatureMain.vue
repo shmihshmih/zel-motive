@@ -1,6 +1,18 @@
 <template>
     <div>
-        литература
+        <div>Литература</div>
+                        <div 
+                v-for="item of bibliography"
+                :key="item.caption"
+                class="art-item-capsule">
+                
+                <router-link :to="{ path: '/literature/' + item.id, params: {id: item.id}}">
+                                    <img src="https://via.placeholder.com/150" alt="image">
+                <div>
+                    {{ item.caption }}
+                </div>
+                </router-link>
+            </div>
     </div>
 </template>
 

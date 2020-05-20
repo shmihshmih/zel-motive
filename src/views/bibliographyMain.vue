@@ -1,30 +1,39 @@
 <template>
     <div>
         <ul>
-            <bibliographyItem
+            <li 
                 v-for="bibliographyItem of bibliography"
-                :key="bibliographyItem"
-                v-bind:bibliographyItem="bibliographyItem"
-                v-on:hellloFromMidParent="hellloFromMidParent"
-            />
+                :key="bibliographyItem.id"
+            > 
+                <router-link :to="{path: '/bibliography/' + bibliographyItem.id, params: {bibliographyItemId: bibliographyItem.id}}">
+                    {{ bibliographyItem.id }} / {{ bibliographyItem.author }} / {{ bibliographyItem.caption }} / {{ bibliographyItem.year }}
+                </router-link>
+            </li>
         </ul>
-        <span>
-            Список библиографии!
-        </span>
     </div>
 </template>
 
 <script>
-    import bibliographyItem from '@/views/bibliographyItem.vue'
     export default {
-        props: ['bibliography'],
-        components: {
-            bibliographyItem
-        },
-        methods: {
-            hellloFromMidParent (id) {
-                console.log("HI!" + id)
-                this.$emit('hellloFromHighParent', id)
+        data() {
+            return {
+                bibliography: [
+                    {
+                        id: 1, author: "автор", caption: "заголовок", year: "год издания"
+                    },
+                                        {
+                        id: 2, author: "автор", caption: "заголовок", year: "год издания"
+                    },
+                                        {
+                        id: 3, author: "автор", caption: "заголовок", year: "год издания"
+                    },
+                                        {
+                        id: 4, author: "автор", caption: "заголовок", year: "год издания"
+                    },
+                                        {
+                        id: 5, author: "автор", caption: "заголовок", year: "год издания"
+                    },
+                ]
             }
         }
     }

@@ -1,7 +1,9 @@
 <template>
     <div>
         <div>
-            artType
+            <div>
+                <router-link to="/art">Изобразительное искусство</router-link>
+            </div>
             {{ type }}
             <div 
                 v-for="item of items"

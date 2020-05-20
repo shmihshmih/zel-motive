@@ -11,6 +11,9 @@ import theathreMain from '@/views/theathreMain.vue'
 import indexMain from '@/views/indexMain.vue'
 import artType from '@/views/artType.vue'
 import artItem from '@/views/artItem.vue'
+import bibliographyItem from '@/views/bibliographyItem.vue'
+import literatureItem from '@/views/literatureItem.vue'
+import moviesItem from '@/views/moviesItem'
 
 Vue.use(Router)
 
@@ -28,6 +31,10 @@ export default new Router ({
         {
             path: '/bibliography',
             component: bibliographyMain
+        },
+        {
+            path: '/bibliography/:id',
+            component: bibliographyItem
         },
         {
             path: '/about',
@@ -60,6 +67,14 @@ export default new Router ({
         {
             path: '/art/:type/:id',
             component: artItem
+        },
+        {
+            path: '/literature/:id',
+            component: literatureItem
+        },
+        {
+            path: '/movies/:id',
+            component: moviesItem
         }
 
     ]
