@@ -9,6 +9,8 @@ import movieMain from '@/views/movieMain.vue'
 import musicMain from '@/views/musicMain.vue'
 import theathreMain from '@/views/theathreMain.vue'
 import indexMain from '@/views/indexMain.vue'
+import artType from '@/views/artType.vue'
+import artItem from '@/views/artItem.vue'
 
 Vue.use(Router)
 
@@ -51,6 +53,14 @@ export default new Router ({
             path: '/theathre',
             component: theathreMain
         },
+        {
+            path: '/art/:type',
+            component: artType
+        },
+        {
+            path: '/art/:type/:id',
+            component: artItem
+        }
 
     ]
 })

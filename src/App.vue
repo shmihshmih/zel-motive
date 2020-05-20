@@ -2,7 +2,7 @@
   <div id="app">
 
   <loader v-if="false" />
-  <topMenu v-if="notIndex"/>
+  <topMenu v-if="this.$route.path != '/' "/>
   <router-view />
   </div>
 </template>
@@ -19,8 +19,7 @@ export default {
         {id:2, author: "kashtanov anton2", caption: "nazvanoe2"},
         {id:3, author: "kashtanov anton3", caption: "nazvanoe3"},
       ],
-      loading: true,
-      notIndex: true
+      loading: true
     }
   },
   components: {
@@ -34,6 +33,13 @@ export default {
     }, 
     removeLoader() {
       this.loading = false
+    }
+  },
+  //следим за роутом для будущих манипуляций
+  watch: {
+    '$route' (to, from) {
+      console.log(this.$route);
+      console.log(to + from)
     }
   }
 }
