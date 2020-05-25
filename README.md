@@ -20,6 +20,10 @@ npm run build
 npm run lint
 ```
 
+### Look to this perfect SPA 
+...
+https://shmihshmih.github.io/zel-motive/
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
